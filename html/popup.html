@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To do app</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/popup.css">
+	<style>
+		#err_title, #dateTime {
+			display: none;
+			font-family: monospace;
+			font-size: 0.8em;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="holder" class="view">
+		<div class="form-group">
+		  <label for="title">Task title:</label>
+		  <input type="text" class="form-control" id="title">
+		  <span id="err_title">Please enter a task title</span>
+		</div>
+		<div class="form-group">
+		  <label for="description">Task description:</label>
+		  <textarea class="form-control" id="description"></textarea>
+		</div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="1" checked="checked">Alarm</label>
+					</div>
+				</div>
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="2">Notification</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="3">Both</label>
+					</div>
+				</div>
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="4">None</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group" id='reminderDateTime'>
+			<label for="date">Date:</label>
+			<input type="date" name="date" class="form-control" id="date">
+			<label for="time id="">Time:</label>
+			<input type="time" name="time" class="form-control" id="time">
+			<span id="dateTime">
+				Please provide date and time for the Alarm and/or Notification
+			</span>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" id="submit">Add Task</button>
+		</div>
+	</div>
+				</div>
+		<ul class="list-group" id="counts">
+		  <li class="list-group-item">
+		  	<a href="javascript:void()" id="allTasks">
+		  		All tasks 
+		  		<img src="/assets/spin.gif" alt="">
+		  		<span class="label label-primary"></span>
+		  	</a>
+		  </li>
+		  <li class="list-group-item">
+		  	<a href="javascript:void()" id="upcomingTasks">
+		  		Upcoming tasks
+		  		<img src="/assets/spin.gif" alt="">
+		  		<span class="label label-warning"></span>
+		  	</a>
+		  </li>
+		  <li class="list-group-item">
+		  	<a href="javascript:void()" id="pendingTaks">
+		  		Pending tasks 
+		  		<img src="/assets/spin.gif" alt="">
+		  		<span class="label label-danger"></span>
+		  	</a>
+		  </li>
+		  <li class="list-group-item">
+		  	<a href="javascript:void()" id="completedTasks">
+		  		Completed tasks 
+		  		<img src="/assets/spin.gif" alt="">
+		  		<span class="label label-success"></span>
+		  	</a>
+		  </li>
+		</ul>
+	</div>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/popup.js"></script>
+</body>
+</html>

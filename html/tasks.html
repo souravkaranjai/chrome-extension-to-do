@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tasks</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/tasks.css">
+	<style>
+		textarea {
+			resize: vertical;
+		}
+		.task-template {
+			height: 175px;
+			margin: 5px 0;
+		}
+		.task-template div div {
+			max-height: 75px;
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">To do app</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="menu"><a href="#allTasks">All Tasks</a></li>
+	      <li class="menu"><a href="#upComingTasks">Upcoming tasks</a></li>
+	      <li class="menu"><a href="#pendingTasks">Pending tasks</a></li>
+	      <li class="menu"><a href="#completedTasks">Completed tasks</a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<div class="container">
+		<div class="row" id="tasks">
+			
+		</div>
+	</div>
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Edit task</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<input type="hidden" value="" id="id">
+	      	<input type="hidden" value="" id="done">
+	        <div class="form-group">
+	          <label for="title">Task title:</label>
+	          <input type="text" class="form-control" id="title">
+	        </div>
+	        <div class="form-group">
+	          <label for="description">Task description:</label>
+	          <textarea class="form-control" id="description"></textarea>
+	        </div>
+	        <div class="form-group">
+			<div class="row">
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="1" checked="checked">Alarm</label>
+					</div>
+				</div>
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="2">Notification</label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="3">Both</label>
+					</div>
+				</div>
+				<div class="col-xs-6 col-lg-6">
+					<div class="radio-inline">
+					  <label><input type="radio" name="reminderType" value="4">None</label>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="form-group" id='reminderDateTime'>
+        	<label for="date">Date:</label>
+        	<input type="date" name="date" class="form-control" id="date">
+        	<label for="time id="">Time:</label>
+        	<input type="time" name="time" class="form-control" id="time">
+        </div>
+        <div class="form-group">
+        	<button class="btn btn-primary" id="submit">Edit Task</button>
+        </div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/tasks.js"></script>
+</body>
+</html>

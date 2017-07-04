@@ -1,0 +1,55 @@
+{
+  "manifest_version": 2,
+  "name": "to_do_app",
+  "description": "Lets you add todos and set reminders and notifications.",
+  "version": "1.0",
+  "icons": {
+    "16": "assets/icon_16x16.png",
+    "32": "assets/icon_32x32.png",
+    "48": "assets/icon_48x48.png",
+    "128": "assets/icon_128x128.png"
+  },
+  "browser_action": {
+    "default_title": "Click me",
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "19": "assets/icon_19x19.png",
+      "38": "assets/icon_38x38.png"
+    }
+  },
+  "permissions": [
+    // "activeTab",
+    "tabs",
+    "storage",
+    "notifications"
+    // "cookies",
+    // "*://*.example.com/"
+  ],
+  "background": {
+    "scripts": [
+    //   "common.js",
+    //   "reload.js",
+      "js/background.js"
+    ]
+    // "persistent": false
+  },
+  "content_scripts": [
+    // {
+      // "matches": [
+      //   "http://*.example.com/*",
+      //   "https://*.example.com/*"
+      // ],
+      // "css": [
+      //   "css/extension.css"
+      // ],
+      // "js": [
+      //   "common.js",
+      //   "client.js"
+      // ]
+    // }
+  ],
+  "web_accessible_resources": [
+  //   "assets/icon_38x38.png",
+  //   "assets/icon_19x19.png"
+  ]
+}
